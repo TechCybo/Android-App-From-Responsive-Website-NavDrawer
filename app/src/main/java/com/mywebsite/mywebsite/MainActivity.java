@@ -2,6 +2,7 @@ package com.mywebsite.mywebsite;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -146,6 +147,23 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
 
+        }
+        //ProgressDialogue
+        ProgressDialog pd = null;
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            pd=new ProgressDialog(MainActivity.this);
+            pd.setTitle("Please Wait..");
+            pd.setMessage("Website is Loading..");
+            pd.show();
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            pd.dismiss();
+            super.onPageFinished(view, url);
         }
     }
     //goto previous page when pressing back button

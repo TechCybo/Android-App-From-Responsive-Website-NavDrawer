@@ -115,18 +115,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camara) {
+        if (id == R.id.nav_us) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+            mwebView.loadUrl("http://www.newsweek.com/us");
+        } else if (id == R.id.nav_world) {
+            mwebView.loadUrl("http://www.newsweek.com/world");
+        } else if (id == R.id.nav_tech) {
+            mwebView.loadUrl("http://www.newsweek.com/tech-science");
+        } else if (id == R.id.nav_sports) {
+            mwebView.loadUrl("http://www.newsweek.com/sports");
         } else if (id == R.id.nav_share) {
-
+            mwebView.loadUrl("http://www.newsweek.com/about-newsweek");
         } else if (id == R.id.nav_send) {
-
+            mwebView.loadUrl("http://www.newsweek.com/contact");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
